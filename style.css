@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff0f2;
+  margin: 0;
+  padding: 20px;
+  color: #5a2e3e;
+  position: relative;
+  overflow-x: hidden;
+}
+.carta {
+  max-width: 600px;
+  background: #f9d9dd;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(183, 50, 74, 0.3);
+  margin: auto;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.carta2 {
+  margin-top: 40px !important;
+  max-width: 600px;
+  background: #f9d9dd;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(183, 50, 74, 0.3);
+  margin: auto;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
+  color: #b30059;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+.corazones-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+.heart {
+  position: absolute;
+  background-image: url('images/1.jpg');
+  width: 30px;
+  height: 30px;
+  background-color: #a9a9a9;
+  opacity: 0.7;
+  animation: floatUp 5.0s ease-out forwards;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #a9a9a9;
+  border-radius: 50%;
+}
+.heart::before {
+  top: -15px;
+  left: 0;
+}
+.heart::after {
+  top: 0;
+  left: 15px;
+}
+@keyframes floatUp {
+  0% {
+    bottom: 0;
+    opacity: 0.7;
+    transform: rotate(320deg) scale(1);
+  }
+  100% {
+    bottom: 120vh;
+    opacity: 0;
+    transform: rotate(320deg) scale(1.5);
+  }
+}
+
+.fotos {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.foto {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(179, 50, 74, 0.3);
+  /* transition: transform 0.3s ease; */
+}
+.foto img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+.foto:hover,
+.foto:focus {
+  transform: scale(1.05);
+}
+.leyenda {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(179, 50, 74, 0.75);
+  color: white;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.foto:hover .leyenda,
+.foto:focus .leyenda {
+  opacity: 1;
+}
+
+.reproducir-btn {
+  display: block;
+  margin: 40px auto 20px auto;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reproducir-btn:hover {
+  background-color: #d81b60;
+  transform: scale(1.05);
+}
