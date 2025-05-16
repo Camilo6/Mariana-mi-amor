@@ -92,13 +92,15 @@ p {
 }
 
 .fotos {
-  max-width: 600px;
+  width: 800px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
 .foto {
+  height: 500px; /* o el tamaño que prefieras */
+
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -108,7 +110,8 @@ p {
 }
 .foto img {
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover;
   border-radius: 12px;
 }
 .foto:hover,
@@ -120,9 +123,11 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
+  max-height: 100%; /* evita que se salga del contenedor */
+  overflow-y: auto;
   background: rgba(179, 50, 74, 0.75);
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   padding: 6px 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -133,6 +138,16 @@ p {
 .foto:focus .leyenda {
   opacity: 1;
 }
+
+
+@media (max-width: 800px) {
+  .fotos {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
+
 
 .reproducir-btn {
   display: block;
